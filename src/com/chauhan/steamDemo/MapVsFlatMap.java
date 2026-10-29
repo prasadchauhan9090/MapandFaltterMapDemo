@@ -30,6 +30,10 @@ public class MapVsFlatMap {
         System.out.println("------------------------------------------------");
 
         //using flatMapp --> stram() of Stream();
+
+        //List<Customer> convert List<String> -> DATA transformation
+        //mapping: customer -> customer.getPhoneNumber()
+        //customer -> customer.getPhoneNumber() --> one to many mapping
         List<String>  phones = customers
                 .stream()
                 .flatMap(customer -> customer.getPhoneNumbers().stream())
