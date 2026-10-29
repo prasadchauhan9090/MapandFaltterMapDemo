@@ -11,13 +11,18 @@ public class MapVsFlatMap {
         //mapping: customer -> customer.geEmail()
         //customer -> customer.geEmail() --> one to one mapping
 
-        List<String> emails = customers.stream().map(customer -> customer.getEmail()).collect(Collectors.toList());
+        List<String> emails = customers
+                .stream().map(customer -> customer.getEmail())
+                .collect(Collectors.toList());
 
          System.out.println(emails);
 
 
          System.out.println("------------------------------------------------");
-        List<List<String>>  phonenumber = customers.stream().map(customer -> customer.getPhoneNumbers()).collect(Collectors.toList());
+        List<List<String>>  phonenumber = customers
+                .stream().map(customer -> customer.getPhoneNumbers())
+                .collect(Collectors.toList());
+
         for(List<String> phone : phonenumber) {
             System.out.println(phone);
         }
@@ -25,7 +30,10 @@ public class MapVsFlatMap {
         System.out.println("------------------------------------------------");
 
         //using flatMapp --> stram() of Stream();
-        List<String>  phones = customers.stream().flatMap(customer -> customer.getPhoneNumbers().stream()).collect(Collectors.toList());
+        List<String>  phones = customers
+                .stream()
+                .flatMap(customer -> customer.getPhoneNumbers().stream())
+                .collect(Collectors.toList());
 
         for(String myNumbers : phones) {
             System.out.println(myNumbers);
