@@ -8,17 +8,20 @@ public class Customer {
     private String name;
     private String email;
     private List<String> phoneNumbers;
+    private int custBill;
 
     public Customer()
     {
 
     }
 
-    public Customer(int id, String name, String email, List<String> phoneNumbers) {
+
+    public Customer(int id, String name, String email, List<String> phoneNumbers, int custBill) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumbers = phoneNumbers;
+        this.custBill = custBill;
     }
 
     public int getId() {
@@ -53,6 +56,14 @@ public class Customer {
         this.phoneNumbers = phoneNumbers;
     }
 
+    public int getCustBill() {
+        return custBill;
+    }
+
+    public void setCustBill(int custBill) {
+        this.custBill = custBill;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -60,6 +71,7 @@ public class Customer {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumbers=" + phoneNumbers +
+                ", custBill=" + custBill +
                 '}';
     }
 }

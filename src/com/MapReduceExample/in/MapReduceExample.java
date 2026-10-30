@@ -1,5 +1,7 @@
 package com.MapReduceExample.in;
 
+import com.chauhan.steamDemo.MyDataBase;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -55,6 +57,19 @@ public class MapReduceExample {
         //MAxValue with method reference
        Integer maxValueWithMethodReference = numbers.stream().reduce(Integer::max).get();
        System.out.println("using maxValueWithMethodReference "+maxValueWithMethodReference);
+
+
+
+       //get customer whose name is prasad
+       //get customer bill from the above customer name
+        double customerBill = MyDataBase.getAll()
+                .stream()
+                .filter(customer ->customer.getName().equalsIgnoreCase("prasad"))
+                .map(customer -> customer.getCustBill())
+                .mapToDouble(i->i)
+                .average().getAsDouble();
+
+        System.out.println(customerBill);
 
 
     }

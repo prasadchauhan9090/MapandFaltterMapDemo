@@ -21,7 +21,7 @@ public class OptionalClassDemo {
 
 
 
-        Customer customer = new Customer(101,"chauhan","chauhan k prasad", Arrays.asList("9952323","232435"));
+        Customer customer = new Customer(101,"chauhan","chauhan k prasad", Arrays.asList("9952323","232435"),9990);
 
 
 //        Optional<String> emailOptional = Optional.of(cuustomer.getEmail());
@@ -44,6 +44,18 @@ public class OptionalClassDemo {
         System.out.println(emp);
 
         getCustomerByEmailId("pkd");
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
