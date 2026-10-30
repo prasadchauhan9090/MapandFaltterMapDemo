@@ -10,12 +10,14 @@ import java.util.Optional;
 
 public class OptionalClassDemo {
 
-    public static Customer getCustomerByEmailId(String email) {
+    public static Customer getCustomerByEmailId(String email) throws Exception{
         List<Customer> customers = MyDataBase.getAll();
-        return customers.stream().filter(customer -> customer.getEmail().equals(email)).findAny().get();
+        return customers
+                .stream()
+                .filter(customer -> customer.getEmail().equals(email))
+                .findAny().orElseThrow(()-> new Exception("no customer present with this email"));
     }
-    public static void main(String args[])
-    {
+    public static void main(String args[]) throws Exception {
 
 
 
