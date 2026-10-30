@@ -72,5 +72,15 @@ public class MapReduceExample {
         System.out.println(customerBill);
 
 
+        double cumOfBill = MyDataBase.getAll()
+                .stream()
+                .filter(customer ->customer.getName().equalsIgnoreCase("prasad"))
+                .map(customer -> customer.getCustBill())
+                .mapToDouble(i->i)
+                        .sum();
+
+        System.out.println(cumOfBill);
+
+
     }
 }
