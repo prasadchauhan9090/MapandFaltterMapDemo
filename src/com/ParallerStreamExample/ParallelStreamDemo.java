@@ -16,7 +16,7 @@ public class ParallelStreamDemo {
         long end=0;
 
 
-//        start=System.currentTimeMillis();
+////      start=System.currentTimeMillis();
 //        IntStream.range(1,50).forEach(System.out::println);
 //        end=System.currentTimeMillis();
 //        System.out.println("Total execution time: "+(end-start)+"ms");
@@ -27,6 +27,7 @@ public class ParallelStreamDemo {
 //        IntStream.range(1,50).parallel().forEach(System.out::println);
 //        end=System.currentTimeMillis();
 //        System.out.println("Parallel execution time: "+(end-start)+"ms");
+
 
 
         IntStream.rangeClosed(1,10).forEach(i-> {
